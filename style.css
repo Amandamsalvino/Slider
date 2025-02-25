@@ -360,19 +360,3 @@ header nav a:hover {
 }
 
 
-.container.next .lista .lista-item:nth-last-child(2) img {
-
-animation-delay: 0.1s;
-}
-
-.container.next .lista .lista-item:nth-last-child(3) img {
-
-    animation-delay: 0.1s;
-
-}
-
-.container.next .lista .lista-item:nth-last-child(4) img {
-
-    animation-delay: 0.1s;
-
-}
