@@ -1,0 +1,362 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Poppins", serif;
+    overflow: hidden;
+}
+
+
+
+
+body {
+
+    background-color: #000;
+    color: #eee;
+    font-size: 12px;
+
+}
+
+header {
+
+    width: 80%;
+    height: 50px;
+    display:flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    margin:auto;
+
+
+}
+
+
+header nav a {
+    
+    color: #eee;
+    font-size: 18px;
+    font-weight: 500;
+    margin-right: 40px;
+    cursor: pointer;
+    
+}
+
+
+header nav a:hover {
+    opacity: 0.8;
+}
+
+
+
+.container {
+
+    width: 100vw;
+    height: 100vh; 
+    margin-top: -50px;
+    
+    
+       
+}
+
+.container .lista .lista-item {
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+
+    }
+
+.container .lista .lista-item img {
+
+    
+    width: 100%;
+   height: 100%;
+   object-fit: cover;
+   filter: brightness(50%);
+   
+    
+}
+
+.container .lista .lista-item .conteudo{
+   
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    padding-right: 30%;
+    width: 80%;
+    color: #eee;
+    text-shadow: 0 5px 10px #0004;
+    
+}
+
+.container .lista .lista-item .titulo {
+
+    font-size: 5em;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3em;
+    text-transform: uppercase;
+    
+}
+
+.container .lista .lista-item .descricao {
+
+    
+    font-size: 1.5em;
+    color: #fff;
+    margin-top: 15px;
+    
+}
+
+.container .lista .lista-item .botoes {
+
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 40px;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.container .lista .lista-item .botoes button {
+
+    border: none;
+    background-color: #eee;
+    letter-spacing: 3px;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: uppercase;
+
+}
+
+.container .lista .lista-item .botoes button:hover {
+
+    background-color: transparent;
+    border: 1px solid #eee;
+    color: #eee;
+    transition: 0.8s;
+
+}
+
+
+.container .lista .lista-item .botoes button:nth-child(2) {
+
+    background-color: transparent;
+    border: 1px solid #eee;
+    color: #eee;
+
+}
+
+.container .lista .lista-item .botoes button:nth-child(2):hover {
+
+    background-color: #eee;
+    color: #000;
+    transition: 0.8s;
+}
+
+.container .thumb {
+
+    display: flex;
+    gap: 30px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;  
+    z-index: 4;  
+    
+}
+
+
+
+.container .thumb .thumb-item {
+
+    width: 135px;
+    height: 200px;
+    position: relative;
+    
+   
+
+}
+
+.container .thumb .thumb-item img {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    filter: brightness(80%);
+
+}
+
+
+.container .thumb .thumb-item .thumb-conteudo {
+
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+
+
+
+.arrows {
+
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 7%;
+    left: 8%;
+    gap: 8px;
+        
+}
+
+.left, .right {
+
+    
+    width: 40px;
+    padding: 7px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.5em;
+    border: none;
+    cursor: pointer;
+    background-color: #eee4;
+    color: #eee;
+
+}
+
+.left:hover, .right:hover {
+
+    background-color: #eee;
+    color: #000;
+    transition: 0.8s;
+}
+
+
+.container.next .thumb {
+
+    animation: efeitoNextThumb 0.5s linear 1 forwards;
+}
+
+@keyframes efeitoNextThumb {
+
+    from {
+
+        transform: translateX(150px);
+    }
+    
+}
+
+
+.container.next .thumb .thumb-item:nth-last-child(1) {
+
+    animation: efeitoUltimaThumb 0.5s linear 1 forwards;
+}
+
+@keyframes efeitoUltimaThumb {
+
+    from {
+
+        width: 0;
+        opacity: 0;
+    }
+    
+}
+
+
+
+.container .lista .lista-item:nth-last-child(1) .conteudo .titulo,
+.container .lista .lista-item:nth-last-child(1) .conteudo .descricao,
+.container .lista .lista-item:nth-last-child(1) .conteudo .botoes {
+
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+
+    animation: aparecerConteudo 0.9s 1s linear 1 forwards;
+
+}
+
+
+@keyframes aparecerConteudo {
+
+    to {
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+    
+}
+
+.container .lista .lista-item:nth-last-child(1) .conteudo .titulo {
+
+    animation-delay: 1.2s;
+}
+
+
+.container .lista .lista-item:nth-last-child(1) .conteudo .descricao {
+
+    animation-delay: 1.6s;
+}
+
+
+.container .lista .lista-item:nth-last-child(1) .conteudo .botoes {
+
+    animation-delay: 2s;
+}
+
+
+.container.next .lista .lista-item:nth-last-child(1) img {
+
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 30px;
+
+    animation: expandirImagem 0.5s linear 1 forwards;;
+
+}
+
+
+@keyframes expandirImagem {
+
+    to {
+
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        bottom: 0;
+        left: 0;
+    }
+    
+}
+
+
+.container.back .lista .lista-item:nth-child(1) img {
+
+    bottom: 0;
+    left: 0;
+    position: absolute;
+   
+    animation: esconderImagem 0.5s linear 1 forwards;
+    z-index: 2;
+
+}
+
+
+@keyframes esconderImagem {
+    
+    to {
+
+        width: 135px;
+        height: 200px;
+        border-radius: 10px;
+        bottom: 50px;
+        left: 50%;
+    }
+}
+
+
